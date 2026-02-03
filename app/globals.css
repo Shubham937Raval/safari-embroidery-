@@ -1,0 +1,75 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0b;
+  --primary: #D32F2F;
+  --accent: #C5A059;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-foreground bg-background antialiased font-sans;
+    /* Explicitly fix the "pink box" selection artifact */
+    ::selection {
+      background-color: rgba(211, 47, 47, 0.15);
+      color: #D32F2F;
+    }
+    ::-moz-selection {
+      background-color: rgba(211, 47, 47, 0.15);
+      color: #D32F2F;
+    }
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-[11px] font-bold tracking-[0.15em] uppercase text-slate-700 hover:text-primary transition-colors py-2 relative flex items-center gap-1;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-[2px] bg-primary transform scale-x-0 transition-transform origin-right duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+
+  .dropdown-item {
+    @apply block px-6 py-3 text-[10px] font-black uppercase tracking-wider text-slate-600 hover:bg-slate-50 hover:text-primary transition-all;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white text-[11px] font-black uppercase tracking-[0.2em] px-8 py-3.5 hover:bg-red-700 transition-all active:scale-95 shadow-lg shadow-primary/10 inline-block text-center cursor-pointer;
+  }
+
+  .btn-outline {
+    @apply border border-slate-200 text-slate-900 text-[11px] font-black uppercase tracking-[0.2em] px-8 py-3.5 hover:bg-slate-50 transition-all active:scale-95 inline-block text-center cursor-pointer;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Fix for Material Icons loading state */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}

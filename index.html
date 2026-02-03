@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safari Embroidery Yarn | Premium Industrial Threads</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#D32F2F", // Safari Red
+              accent: "#C5A059",  // Safari Gold
+              "navy-dark": "#0A0A0B",
+            },
+            fontFamily: {
+              sans: ["'Roboto'", "sans-serif"],
+            }
+          }
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        html { scroll-behavior: smooth; }
+        body { @apply text-slate-900 bg-white antialiased font-sans selection:bg-primary/20; }
+        .nav-link { @apply text-xs font-semibold tracking-widest uppercase text-slate-700 hover:text-primary transition-colors flex items-center gap-1 py-4; }
+        .dropdown-item { @apply block px-6 py-3 text-xs font-medium uppercase tracking-wider text-slate-600 hover:bg-slate-50 hover:text-primary transition-all; }
+      }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom": "https://esm.sh/react-dom@^19.2.4",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.4/client",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "tailwindcss": "https://esm.sh/tailwindcss@^4.1.18"
+  }
+}
+</script>
+    <script type="module" src="index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
